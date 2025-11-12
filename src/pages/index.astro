@@ -1,11 +1,19 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import Tarifs from "../components/Tarifs.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Footer from "../components/Footer.astro";
 ---
-
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+  <Header />
+  <Hero />
+  <Section id="vie" title="Vie quotidienne" content="Nos résidents profitent d’un cadre de vie convivial, sécurisé et rythmé par des activités variées." image="/images/vie.jpg" />
+  <Section id="soins" title="Soins et accompagnement" content="Une équipe médicale présente 24h/24 assure un suivi personnalisé et bienveillant." image="/images/soins.jpg" />
+  <Section id="restauration" title="Restauration" content="Des repas équilibrés et savoureux préparés sur place par notre chef." image="/images/repas.jpg" />
+  <Tarifs />
+  <ContactForm />
+  <Footer />
+</BaseLayout>
