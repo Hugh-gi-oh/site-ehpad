@@ -1,19 +1,85 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import Section from "../components/Section.astro";
-import Tarifs from "../components/Tarifs.astro";
-import ContactForm from "../components/ContactForm.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Tarifs from '../components/Tarifs.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+
+// You can replace site/canonical values below:
+const title = 'Résidence Les Lauriers — Votre maison de retraite en Corrèze';
+const description = 'Un cadre de vie chaleureux au coeur de la Corrèze. Depuis 1977, la résidence Les Lauriers accueille 24 résidents dans une ambiance familiale.';
 ---
-<BaseLayout>
+<BaseLayout title={title} description={description} canonical="https://example.com/">
   <Header />
-  <Hero />
-  <Section id="vie" title="Vie quotidienne" content="Nos résidents profitent d’un cadre de vie convivial, sécurisé et rythmé par des activités variées." image="/images/vie.jpg" />
-  <Section id="soins" title="Soins et accompagnement" content="Une équipe médicale présente 24h/24 assure un suivi personnalisé et bienveillant." image="/images/soins.jpg" />
-  <Section id="restauration" title="Restauration" content="Des repas équilibrés et savoureux préparés sur place par notre chef." image="/images/repas.jpg" />
-  <Tarifs />
-  <ContactForm />
+
+  <main>
+    <Hero
+      title="Un cadre de vie chaleureux au coeur de la Corrèze"
+      subtitle="Depuis 1977, la résidence Les Lauriers accueille 24 résidents dans une ambiance familiale au cœur de Sainte-Fortunade, à proximité de Tulle et de Brive."
+      cta="Contactez-nous"
+    />
+
+    <Section id="vie" title="La vie aux Lauriers" subtitle="Votre quotidien chez nous">
+      <div class="mt-4 grid gap-6 md:grid-cols-2">
+        <div class="bg-white p-6 rounded shadow">
+          <h4 class="font-semibold">Cadre agréable</h4>
+          <p class="mt-2 text-gray-700">Village paisible, jardin sécurisé, commerces à pied.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded shadow">
+          <h4 class="font-semibold">Equipe soignante dévouée</h4>
+          <p class="mt-2 text-gray-700">Infirmières, aides-soignantes, surveillance permanente.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded shadow">
+          <h4 class="font-semibold">Restauration maison</h4>
+          <p class="mt-2 text-gray-700">Repas préparés sur place chaque jour.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded shadow">
+          <h4 class="font-semibold">Vie sociale riche</h4>
+          <p class="mt-2 text-gray-700">Animations, sorties, ateliers, événements festifs.</p>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <h3 class="text-xl font-semibold">Des chambres où se sentir chez soi</h3>
+        <p class="mt-2 text-gray-700">24 chambres individuelles rénovées, lumineuses et entièrement équipées :</p>
+        <ul class="mt-2 list-disc list-inside text-gray-700">
+          <li>Espace privatif personnalisable avec vos meubles et objets</li>
+          <li>Cabinet de toilette avec douche à l'italienne</li>
+          <li>Appel d'urgence + veille de nuit 24h/24</li>
+          <li>Téléphone + wifi gratuit</li>
+          <li>Entretien du linge inclus</li>
+        </ul>
+      </div>
+
+      <div class="mt-8">
+        <h3 class="text-xl font-semibold">Soins et accompagnement</h3>
+        <p class="mt-2 text-gray-700">Équipe soignante : 2 infirmières diplômées et des auxiliaires de vie qualifiées assurent tous les soins quotidiens (toilette, habillage, aide aux repas, suivi médical). Vous gardez le libre choix de votre médecin traitant.</p>
+        <p class="mt-2 text-gray-700">Ce qui est inclus : Tous les soins infirmiers et de nursing, produits d'incontinence, surveillance 24h/24, soutien psychologique en partenariat avec l'hôpital de Tulle.</p>
+      </div>
+
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold">Restauration maison</h3>
+        <p class="mt-2 text-gray-700">Tous les repas sont préparés sur place par notre équipe de cuisine.</p>
+        <p class="mt-2 text-gray-700"><strong>Horaires :</strong> Petit-déjeuner en chambre (7h-8h30), déjeuner (11h45), goûter (16h), dîner (18h30)</p>
+        <p class="mt-2 text-gray-700"><strong>Menus :</strong> Des repas équilibrés, adaptés aux besoins nutritionnels, avec produits de saison et saveurs locales.</p>
+      </div>
+
+      <div class="mt-8">
+        <h3 class="text-xl font-semibold">Une vie sociale épanouissante</h3>
+        <p class="mt-2 text-gray-700">Chaque après-midi en semaine : ateliers pâtisserie, jardinage, jeux de société, gym douce, stimulation mémoire...</p>
+        <p class="mt-2 text-gray-700">Vos proches sont toujours les bienvenus. Vous pouvez même les inviter à déjeuner (prévenir 24h avant). Vous êtes libre de sortir en journée.</p>
+      </div>
+    </Section>
+
+    <Tarifs />
+
+    <ContactForm />
+  </main>
+
   <Footer />
 </BaseLayout>
