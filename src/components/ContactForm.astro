@@ -1,14 +1,71 @@
+---
+// Contact form with basic client-side validation
+---
 <section id="contact" class="py-12 bg-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-semibold text-green-800 mb-6 text-center">Contactez-nous</h2>
-    <form class="max-w-lg mx-auto grid gap-4">
-      <input type="text" placeholder="Nom" required class="border p-3 rounded" />
-      <input type="email" placeholder="Email" required class="border p-3 rounded" />
-      <textarea placeholder="Message" rows="4" required class="border p-3 rounded"></textarea>
-      <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded hover:bg-green-800 transition">
-        Envoyer
-      </button>
+  <div class="container">
+    <h2 class="text-2xl font-semibold text-primary">Contactez-nous !</h2>
+    <p class="mt-2 text-gray-700">Une question sur l'admission d'un proche ou une candidature ?</p>
+
+    <form id="contactForm" class="mt-6 grid gap-4 md:grid-cols-2" action="#" method="post" onsubmit="return false;">
+      <label class="sr-only" for="prenom">Prénom</label>
+      <input id="prenom" name="prenom" placeholder="Prénom" required class="p-3 border rounded" />
+
+      <label class="sr-only" for="nom">Nom</label>
+      <input id="nom" name="nom" placeholder="Nom" required class="p-3 border rounded" />
+
+      <label class="sr-only" for="email">Mail</label>
+      <input id="email" name="email" type="email" placeholder="Mail" required class="p-3 border rounded" />
+
+      <label class="sr-only" for="tel">Numéro de téléphone</label>
+      <input id="tel" name="tel" placeholder="Numéro de téléphone" class="p-3 border rounded" />
+
+      <label class="sr-only" for="motif">Motif</label>
+      <select id="motif" name="motif" class="p-3 border rounded">
+        <option>Admission</option>
+        <option>Visite</option>
+        <option>Candidature spontanée</option>
+        <option>Autres</option>
+      </select>
+
+      <label class="sr-only" for="message">Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Message" class="p-3 border rounded md:col-span-2"></textarea>
+
+      <div class="md:col-span-2 flex items-center gap-4">
+        <button id="submitBtn" class="rounded-md bg-primary px-5 py-3 text-white">Envoyer</button>
+        <div id="formMsg" role="status" aria-live="polite" class="text-sm text-gray-600"></div>
+      </div>
     </form>
   </div>
+
+  <script type="module">
+    // Minimal client-side validation & simulated send (no external deps)
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMsg = document.getElementById('formMsg');
+
+    submitBtn.addEventListener('click', () => {
+      const email = document.getElementById('email').value.trim();
+      const prenom = document.getElementById('prenom').value.trim();
+      const nom = document.getElementById('nom').value.trim();
+
+      if (!prenom || !nom) {
+        formMsg.textContent = 'Merci d\'indiquer votre prénom et nom.';
+        return;
+      }
+      if (!/^\S+@\S+\.\S+$/.test(email)) {
+        formMsg.textContent = 'Merci d\'indiquer une adresse mail valide.';
+        return;
+      }
+
+      // Simulated send
+      submitBtn.setAttribute('disabled', 'true');
+      submitBtn.textContent = 'Envoi…';
+      setTimeout(() => {
+        formMsg.textContent = 'Merci — nous vous répondons sous 48h.';
+        submitBtn.removeAttribute('disabled');
+        submitBtn.textContent = 'Envoyer';
+        form.reset();
+      }, 900);
+    });
+  </script>
 </section>
-  

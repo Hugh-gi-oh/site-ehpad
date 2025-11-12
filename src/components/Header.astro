@@ -1,12 +1,22 @@
-<header class="bg-green-800 text-white py-4">
-  <div class="container mx-auto flex justify-between items-center px-4">
-    <img src="/images/logo.png" alt="Logo Maison de Retraite Corrèze" class="h-10" />
-    <nav class="space-x-6 text-sm md:text-base">
-      <a href="#vie" class="hover:underline">Vie quotidienne</a>
-      <a href="#soins" class="hover:underline">Soins</a>
-      <a href="#restauration" class="hover:underline">Restauration</a>
-      <a href="#tarifs" class="hover:underline">Tarifs</a>
-      <a href="#contact" class="hover:underline">Contact</a>
+---
+// Accessible header with simple nav
+---
+<header class="bg-white shadow-sm">
+  <div class="container flex items-center justify-between py-4">
+    <a href="/" class="flex items-center gap-3" aria-label="Accueil - Résidence Les Lauriers">
+      <img src="/images/logo.png" alt="Logo Les Lauriers" width="56" height="56" class="rounded-full" />
+      <div>
+        <div class="text-lg font-semibold">Résidence Les Lauriers</div>
+        <div class="text-sm text-gray-500">Votre maison de retraite en Corrèze</div>
+      </div>
+    </a>
+
+    <nav aria-label="Navigation principale">
+      <ul class="flex gap-6 text-sm">
+        <li><a href="#vie" class="hover:underline">La vie aux Lauriers</a></li>
+        <li><a href="#tarifs" class="hover:underline">Tarifs & admission</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
     </nav>
   </div>
 </header>

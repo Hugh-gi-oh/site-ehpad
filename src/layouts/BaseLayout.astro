@@ -1,15 +1,62 @@
 ---
+// BaseLayout.astro
 import "../styles/globals.css";
-import { SEO } from "astro-seo";
-const { title = "Maison de Retraite Corrèze", description = "Un cadre de vie chaleureux et sécurisé pour nos aînés." } = Astro.props;
+const { title = 'Résidence Les Lauriers', description = 'Un cadre de vie chaleureux au coeur de la Corrèze' } = Astro.props;
+const canonical = Astro.props.canonical || Astro.site || '/';
 ---
+<!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <SEO title={title} description={description} />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#2f6f4e" />
+    <link rel="icon" href="/favicon.svg" />
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Résidence Les Lauriers" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="/images/og-image.jpg" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+    <!-- Minimal critical CSS preloaded (optional) -->
+    <link rel="preload" href="/styles/critical.css" as="style" />
+    <link rel="stylesheet" href="/styles/critical.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Résidence Les Lauriers",
+        "url": "https://example.com",
+        "logo": "https://example.com/images/logo.png",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+33555273900",
+            "contactType": "customer service",
+            "availableLanguage": "fr"
+          }
+        ],
+        "address": {
+          "@type":"PostalAddress",
+          "streetAddress":"24 Lavergne",
+          "addressLocality":"Sainte-Fortunade",
+          "postalCode":"19490",
+          "addressRegion":"Corrèze",
+          "addressCountry":"FR"
+        }
+      }
+    </script>
+    <slot name="head" />
   </head>
-  <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+  <body class="font-sans text-gray-800 antialiased">
     <slot />
   </body>
 </html>

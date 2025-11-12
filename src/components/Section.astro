@@ -1,12 +1,13 @@
 ---
-const { id, title, content, image } = Astro.props;
+// Generic section for text + bullet features
+const { id, title, subtitle, children } = Astro.props;
 ---
-<section id={id} class="py-12 bg-white">
-  <div class="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4">
-    <img src={image} alt={title} class="w-full md:w-1/2 rounded-xl shadow-md" loading="lazy" />
-    <div class="md:w-1/2">
-      <h2 class="text-2xl font-semibold text-green-800 mb-4">{title}</h2>
-      <p class="text-gray-700 leading-relaxed">{content}</p>
+<section id={id} class="py-10 bg-gray-50">
+  <div class="container">
+    <h2 class="text-2xl font-semibold text-primary">{title}</h2>
+    {subtitle ? <p class="mt-2 text-gray-700">{subtitle}</p> : null}
+    <div class="mt-6">
+      <slot />
     </div>
   </div>
 </section>

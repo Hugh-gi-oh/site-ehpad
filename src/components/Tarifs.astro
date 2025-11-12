@@ -1,19 +1,39 @@
-<section id="tarifs" class="py-12 bg-gray-100">
-  <div class="container mx-auto px-4 text-center">
-    <h2 class="text-2xl font-semibold text-green-800 mb-6">Nos tarifs</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-xl font-semibold mb-2">Chambre simple</h3>
-        <p class="text-gray-700 mb-4">À partir de 68€/jour</p>
+---
+// Tarifs block
+const { tarifs } = Astro.props;
+---
+<section id="tarifs" class="py-12">
+  <div class="container">
+    <h2 class="text-2xl font-semibold text-primary">Tarifs et admission</h2>
+    <p class="mt-2 text-gray-700">Comment nous rejoindre ?</p>
+
+    <div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="p-6 bg-white rounded-lg shadow">
+        <h3 class="font-semibold">Tarifs hébergements</h3>
+        <p class="mt-2 text-xl font-bold">83,08€ / jour (Tout inclus)</p>
       </div>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-xl font-semibold mb-2">Chambre double</h3>
-        <p class="text-gray-700 mb-4">À partir de 120€/jour</p>
+
+      <div class="p-6 bg-white rounded-lg shadow">
+        <h3 class="font-semibold">Tarifs dépendance</h3>
+        <ul class="mt-2 text-gray-700">
+          <li>GIR 1-2 : 26,44 € / jour</li>
+          <li>GIR 3-4 : 16,77 € / jour</li>
+          <li>GIR 5-6 : 7,12 € / jour</li>
+        </ul>
       </div>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-xl font-semibold mb-2">Court séjour</h3>
-        <p class="text-gray-700 mb-4">Sur devis</p>
+
+      <div class="p-6 bg-white rounded-lg shadow">
+        <h3 class="font-semibold">Aides financières</h3>
+        <p class="mt-2 text-gray-700 text-sm">APA, aide au logement, informations à demander au secrétariat.</p>
       </div>
+    </div>
+
+    <div class="mt-8">
+      <ol class="list-decimal list-inside text-gray-700">
+        <li>Contactez-nous pour une visite ou un dossier d'admission</li>
+        <li>Constituez votre dossier (contrats, pièces, ordonnances)</li>
+        <li>Validation par le directeur après examen</li>
+      </ol>
     </div>
   </div>
 </section>
