@@ -1,0 +1,15 @@
+---
+import "../styles/globals.css";
+import { SEO } from "astro-seo";
+const { title = "Maison de Retraite Corrèze", description = "Un cadre de vie chaleureux et sécurisé pour nos aînés." } = Astro.props;
+---
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <SEO title={title} description={description} />
+  </head>
+  <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+    <slot />
+  </body>
+</html>
