@@ -7,7 +7,7 @@ module.exports = {
         accent: "#6fae86",
       },
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui"],
+        sans: ["Poppins", "sans-serif"],
       },
     },
   },

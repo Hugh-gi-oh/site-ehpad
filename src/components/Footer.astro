@@ -1,25 +1,36 @@
----
-// Footer with contact details
----
-<footer class="bg-gray-50 border-t mt-12">
-  <div class="container py-8 flex flex-col md:flex-row md:justify-between md:items-start gap-6">
-    <div>
-      <h3 class="font-semibold">Résidence Les Lauriers</h3>
+<footer class="bg-gray-50 border-t mt-12" aria-label="Pied de page">
+  <div class="container mx-auto py-8 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+    
+    <!-- Contact Info -->
+    <section aria-labelledby="footer-contact">
+      <h3 id="footer-contact" class="font-semibold text-gray-800">Résidence Les Lauriers</h3>
       <p class="text-sm text-gray-600 mt-2">24 Lavergne, 19490 Sainte-Fortunade</p>
-      <p class="text-sm text-gray-600">lauriers.contact@gmail.com</p>
-      <p class="text-sm text-gray-600">05 55 27 39 00</p>
-    </div>
+      <p class="text-sm text-gray-600">
+        <a href="mailto:lauriers.contact@gmail.com" class="hover:underline focus:underline">lauriers.contact@gmail.com</a>
+      </p>
+      <p class="text-sm text-gray-600">
+        <a href="tel:+33555273900" class="hover:underline focus:underline">05 55 27 39 00</a>
+      </p>
+      <p class="text-sm text-gray-600">
+        <a href="fax:+33500000000" class="hover:underline focus:underline">05 00 00 00 00</a>
+      </p>
+    </section>
 
-    <nav aria-label="Navigation footer">
+    <!-- Navigation -->
+    <nav aria-label="Navigation du footer">
+      <h4 class="font-semibold text-gray-800 mb-2">Navigation</h4>
       <ul class="flex flex-col gap-2 text-sm">
-        <li><a href="#vie" class="hover:underline">La vie aux Lauriers</a></li>
-        <li><a href="#tarifs" class="hover:underline">Tarifs & admission</a></li>
-        <li><a href="#contact" class="hover:underline">Contact</a></li>
+        <li><a href="#accueil" class="hover:underline focus:underline">Accueil</a></li>
+        <li><a href="#vie" class="hover:underline focus:underline">La vie aux Lauriers</a></li>
+        <li><a href="#tarifs" class="hover:underline focus:underline">Tarifs & admission</a></li>
+        <li><a href="#contact" class="hover:underline focus:underline">Contact</a></li>
       </ul>
     </nav>
 
-    <div class="text-sm text-gray-500">
-      <p>2025 Les Lauriers - Tous droits réservés</p>
-    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="pb-4 text-center text-sm text-gray-500">
+    © 2025 Résidence Les Lauriers - Tous droits réservés
   </div>
 </footer>
