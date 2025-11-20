@@ -13,6 +13,11 @@ import soinsImg from '../images/soins.webp';
 import repasImg from '../images/repas.webp';
 import activitesImg from '../images/activites.webp';
 
+import HouseIcon from '../images/house.svg';
+import CareIcon from '../images/care.svg';
+import FoodIcon from '../images/food.svg';
+import ActivityIcon from '../images/activity.svg';
+
 // SEO
 const title = 'Résidence Les Lauriers — Votre maison de retraite en Corrèze';
 const description =
@@ -29,28 +34,35 @@ const description =
     />
 
     <Section id="vie" title="La vie aux Lauriers" subtitle="Votre quotidien chez nous">
-      <div class="mt-4 grid gap-6 md:grid-cols-2">
-        <div class="bg-white p-6 rounded shadow">
-          <h4 class="font-semibold">Cadre agréable</h4>
-          <p class="mt-2 text-gray-700">Village paisible, jardin sécurisé, commerces à pied.</p>
-        </div>
 
-        <div class="bg-white p-6 rounded shadow">
-          <h4 class="font-semibold">Equipe soignante dévouée</h4>
-          <p class="mt-2 text-gray-700">Infirmières, aides-soignantes, surveillance permanente.</p>
-        </div>
+      <li class="flex flex-col items-start gap-2">
+        <HouseIcon class="w-8 h-8 text-primary" />
+        <h4 class="font-semibold text-gray-900">Cadre agréable</h4>
+        <p class="text-gray-700 text-sm">Village paisible, jardin sécurisé, commerces à pied.</p>
+      </li>
 
-        <div class="bg-white p-6 rounded shadow">
-          <h4 class="font-semibold">Restauration maison</h4>
-          <p class="mt-2 text-gray-700">Repas préparés sur place chaque jour.</p>
-        </div>
+      <li class="flex flex-col items-start gap-2">
+        <CareIcon class="w-8 h-8 text-primary" />
+        <h4 class="font-semibold text-gray-900">Equipe soignante dévouée</h4>
+        <p class="text-gray-700 text-sm">Infirmières, aides-soignantes, surveillance permanente.</p>
+      </li>
 
-        <div class="bg-white p-6 rounded shadow">
-          <h4 class="font-semibold">Vie sociale riche</h4>
-          <p class="mt-2 text-gray-700">Animations, sorties, ateliers, événements festifs.</p>
-        </div>
-      </div>
+      <li class="flex flex-col items-start gap-2">
+        <FoodIcon class="w-8 h-8 text-primary" />
+        <h4 class="font-semibold text-gray-900">Restauration maison</h4>
+        <p class="text-gray-700 text-sm">Repas préparés sur place chaque jour.</p>
+      </li>
+
+      <li class="flex flex-col items-start gap-2">
+        <ActivityIcon class="w-8 h-8 text-primary" />
+        <h4 class="font-semibold text-gray-900">Vie sociale riche</h4>
+        <p class="text-gray-700 text-sm">Animations, sorties, ateliers, événements festifs.</p>
+      </li>
+
     </Section>
+
+
+
 
     <!-- SECTION : Des chambres où se sentir chez soi -->
     <FeatureBlock

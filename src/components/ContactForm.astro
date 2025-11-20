@@ -1,68 +1,135 @@
----
-// Contact form with basic client-side validation
----
-<section id="contact" class="py-12 bg-white">
-  <div class="container">
-    <h2 class="text-2xl font-semibold text-primary">Contactez-nous !</h2>
-    <p class="mt-2 text-gray-700">Une question sur l'admission d'un proche ou une candidature ?</p>
+<section id="contact" class="py-20" style="background-color:#CADACB;">
+  <div class="container mx-auto px-4 max-w-6xl">
 
-    <form id="contactForm" class="mt-6 grid gap-4 md:grid-cols-2" action="#" method="post" onsubmit="return false;">
-      <label class="sr-only" for="prenom">Prénom</label>
-      <input id="prenom" name="prenom" placeholder="Prénom" required class="p-3 border rounded" />
+    <!-- TITRE -->
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl font-semibold text-primary">Contactez-nous&nbsp;!</h2>
+      <p class="mt-2 text-gray-700">
+        Une question sur l'admission d'un proche ou une candidature ?
+      </p>
+    </div>
 
-      <label class="sr-only" for="nom">Nom</label>
-      <input id="nom" name="nom" placeholder="Nom" required class="p-3 border rounded" />
+    <!-- CONTENEUR PRINCIPAL -->
+    <div class="mt-12 bg-white rounded-2xl shadow-xl overflow-hidden">
 
-      <label class="sr-only" for="email">Mail</label>
-      <input id="email" name="email" type="email" placeholder="Mail" required class="p-3 border rounded" />
+      <!-- 2 COLONNES INTERNES -->
+      <div class="grid grid-cols-1 md:grid-cols-[40%_60%] gap-0">
 
-      <label class="sr-only" for="tel">Numéro de téléphone</label>
-      <input id="tel" name="tel" placeholder="Numéro de téléphone" class="p-3 border rounded" />
+        <!-- COLONNE GAUCHE (infos) -->
+        <div class="bg-primary text-white p-6 sm:p-8 md:p-12">
+          <h3 class="text-xl font-semibold mb-6">Informations</h3>
+          <div class="space-y-6 text-sm">
+            <div>
+              <h4 class="font-semibold text-lg">Visitez-nous</h4>
+              <p class="mt-1 opacity-90">Visite sur rendez-vous. Venez rencontrer l'équipe et découvrir nos espaces.</p>
+              <p class="mt-1">Adresse : 24 Lavergne, 19490 Sainte-Fortunade</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-lg">Écrivez-nous</h4>
+              <p class="mt-1 opacity-90">Nous vous répondons sous 48h.</p>
+              <p class="mt-1">Mail : <a href="mailto:lauriers.contact@gmail.com" class="underline">lauriers.contact@gmail.com</a></p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-lg">Appelez-nous</h4>
+              <p class="mt-1 opacity-90">Du lundi au vendredi, 9h-18h</p>
+              <p class="mt-1">Tel : 05 55 27 39 00</p>
+              <p>Fax : 05 55 27 30 19</p>
+            </div>
+          </div>
+        </div>
 
-      <label class="sr-only" for="motif">Motif</label>
-      <select id="motif" name="motif" class="p-3 border rounded">
-        <option>Admission</option>
-        <option>Visite</option>
-        <option>Candidature spontanée</option>
-        <option>Autres</option>
-      </select>
+        <!-- COLONNE DROITE (formulaire) -->
+        <div class="px-4 sm:px-6 md:px-12 py-6 sm:py-8 md:py-12">
+          <form id="contactForm" class="w-full max-w-full grid gap-6 md:grid-cols-2" method="post" novalidate>
+            <!-- Prénom -->
+            <div class="flex flex-col">
+              <label for="prenom" class="text-sm font-medium text-gray-700">Prénom *</label>
+              <input id="prenom" name="prenom" required placeholder="Votre prénom" autocomplete="given-name"
+                class="mt-1 px-3 sm:px-4 md:px-6 py-3 border rounded-md shadow-sm focus:ring-primary focus:border-primary w-full box-border" />
+            </div>
 
-      <label class="sr-only" for="message">Message</label>
-      <textarea id="message" name="message" rows="4" placeholder="Message" class="p-3 border rounded md:col-span-2"></textarea>
+            <!-- Nom -->
+            <div class="flex flex-col">
+              <label for="nom" class="text-sm font-medium text-gray-700">Nom *</label>
+              <input id="nom" name="nom" required placeholder="Votre nom" autocomplete="family-name"
+                class="mt-1 px-3 sm:px-4 md:px-6 py-3 border rounded-md shadow-sm focus:ring-primary focus:border-primary w-full box-border" />
+            </div>
 
-      <div class="md:col-span-2 flex items-center gap-4">
-        <button id="submitBtn" class="rounded-md bg-primary px-5 py-3 text-white">Envoyer</button>
-        <div id="formMsg" role="status" aria-live="polite" class="text-sm text-gray-600"></div>
+            <!-- Email -->
+            <div class="flex flex-col">
+              <label for="email" class="text-sm font-medium text-gray-700">Email *</label>
+              <input id="email" name="email" type="email" required placeholder="exemple@mail.fr" autocomplete="email"
+                class="mt-1 px-3 sm:px-4 md:px-6 py-3 border rounded-md shadow-sm focus:ring-primary focus:border-primary w-full box-border" />
+            </div>
+
+            <!-- Téléphone -->
+            <div class="flex flex-col">
+              <label for="tel" class="text-sm font-medium text-gray-700">Téléphone</label>
+              <input id="tel" name="tel" type="tel" placeholder="06 12 34 56 78" autocomplete="tel"
+                class="mt-1 px-3 sm:px-4 md:px-6 py-3 border rounded-md shadow-sm focus:ring-primary focus:border-primary w-full box-border" />
+            </div>
+
+            <!-- Motif -->
+            <div class="flex flex-col md:col-span-2">
+              <label for="motif" class="text-sm font-medium text-gray-700">Motif</label>
+              <select id="motif" name="motif"
+                class="mt-1 px-3 sm:px-4 md:px-6 py-3 border rounded-md shadow-sm focus:ring-primary focus:border-primary w-full box-border">
+                <option value="admission">Admission</option>
+                <option value="visite">Visite</option>
+                <option value="candidature">Candidature spontanée</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="flex flex-col md:col-span-2">
+              <label for="message" class="text-sm font-medium text-gray-700">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Votre message…"
+                class="mt-1 px-3 sm:px-4 md:px-6 py-3 border rounded-md shadow-sm focus:ring-primary focus:border-primary w-full box-border"></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="md:col-span-2 flex items-center gap-4">
+              <button id="submitBtn"
+                class="rounded-md bg-primary px-6 py-3 text-white font-semibold shadow hover:bg-primary/90 transition">
+                Envoyer
+              </button>
+              <p id="formMsg" role="status" aria-live="polite" class="text-sm text-gray-600"></p>
+            </div>
+          </form>
+        </div>
       </div>
-    </form>
+    </div>
   </div>
 
-  <script type="module">
-    // Minimal client-side validation & simulated send (no external deps)
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const formMsg = document.getElementById('formMsg');
+  <!-- VALIDATION JS -->
+  <script type="module" client:idle>
+    const form = document.querySelector('#contactForm');
+    const submitBtn = document.querySelector('#submitBtn');
+    const formMsg = document.querySelector('#formMsg');
 
-    submitBtn.addEventListener('click', () => {
-      const email = document.getElementById('email').value.trim();
-      const prenom = document.getElementById('prenom').value.trim();
-      const nom = document.getElementById('nom').value.trim();
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const prenom = form.prenom.value.trim();
+      const nom = form.nom.value.trim();
+      const email = form.email.value.trim();
+      formMsg.textContent = '';
 
       if (!prenom || !nom) {
-        formMsg.textContent = 'Merci d\'indiquer votre prénom et nom.';
+        formMsg.textContent = 'Merci d’indiquer votre prénom et nom.';
         return;
       }
-      if (!/^\S+@\S+\.\S+$/.test(email)) {
-        formMsg.textContent = 'Merci d\'indiquer une adresse mail valide.';
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        formMsg.textContent = 'Merci d’indiquer une adresse mail valide.';
         return;
       }
 
-      // Simulated send
-      submitBtn.setAttribute('disabled', 'true');
+      submitBtn.disabled = true;
       submitBtn.textContent = 'Envoi…';
+
       setTimeout(() => {
         formMsg.textContent = 'Merci — nous vous répondons sous 48h.';
-        submitBtn.removeAttribute('disabled');
+        submitBtn.disabled = false;
         submitBtn.textContent = 'Envoyer';
         form.reset();
       }, 900);
