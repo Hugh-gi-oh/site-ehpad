@@ -2,38 +2,93 @@
 // Tarifs block
 const { tarifs } = Astro.props;
 ---
-<section id="tarifs" class="py-12">
-  <div class="container">
-    <h2 class="text-2xl font-semibold text-primary">Tarifs et admission</h2>
-    <p class="mt-2 text-gray-700">Comment nous rejoindre ?</p>
+<section id="tarifs" class="py-12 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <!-- Titre centré -->
+    <h2 class="text-3xl font-semibold text-primary text-center">Tarifs et admission</h2>
+    <hr class="mt-8 mb-12 border-gray-300 w-4/5 mx-auto"> <!-- barre supérieure -->
 
-    <div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h3 class="font-semibold">Tarifs hébergements</h3>
-        <p class="mt-2 text-xl font-bold">83,08€ / jour (Tout inclus)</p>
+    <!-- Texte et liste alignés avec largeur des blocs tarifs -->
+    <div class="max-w-3xl mx-auto">
+      <p class="mt-2 text-3xl font-semibold text-gray-700">Comment nous rejoindre ?</p>
+
+      <!-- Liste des étapes -->
+      <div class="mt-6">
+        <ol class="list-decimal list-inside text-gray-700 space-y-2">
+          <li>Contactez-nous pour une visite ou un dossier d'admission</li>
+          <li>Constituez votre dossier (contrats, pièces, ordonnances)</li>
+          <li>Validation par le directeur après examen</li>
+        </ol>
+        <p class="mt-6 text-gray-700">
+          Nous accueillons pour des séjours <strong>temporaires</strong> (convalescence, répit) ou <strong>définitifs</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Barre horizontale sous le texte (hors du conteneur max-w-3xl) -->
+    <hr class="mt-8 mb-12 border-gray-300 w-4/5 mx-auto">
+
+    <!-- Wrapper commun pour les tarifs et aides financières -->
+    <div class="mt-8 max-w-3xl mx-auto flex flex-col space-y-6">
+      
+      <!-- Tarifs Hébergements et Dépendance -->
+      <div class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
+        
+        <!-- Tarifs Hébergements -->
+        <div class="p-6 bg-primary/10 rounded-lg shadow text-center flex-1">
+          <h3 class="font-semibold text-primary">Tarifs hébergements</h3>
+          <p class="text-sm font-normal mt-1 mb-8">Tout inclus</p>
+          <p class="text-2xl font-semibold text-primary">83,08€ <span class="text-base font-normal">/ jour</span></p>
+        </div>
+
+        <!-- Tarifs Dépendance -->
+        <div class="p-6 bg-accent/10 rounded-lg shadow flex-1">
+          <h3 class="font-semibold text-accent text-center">Tarifs dépendance</h3>
+          <p class="text-sm font-normal mt-1 mb-2 text-center">Selon le GIR*</p>
+          <div class="flex justify-center">
+            <ul class="mt-2 text-gray-700 space-y-2">
+              <li class="flex">
+                <span class="w-20 font-medium">GIR 1-2</span>
+                <span>
+                  <span class="text-lg font-semibold">26,44 €</span> 
+                  <span class="text-sm font-normal">/ jour</span>
+                </span>
+              </li>
+              <li class="flex">
+                <span class="w-20 font-medium">GIR 3-4</span>
+                <span>
+                  <span class="text-lg font-semibold">16,77 €</span> 
+                  <span class="text-sm font-normal">/ jour</span>
+                </span>
+              </li>
+              <li class="flex">
+                <span class="w-20 font-medium">GIR 5-6</span>
+                <span>
+                  <span class="text-lg font-semibold">7,12 €</span> 
+                  <span class="text-sm font-normal">/ jour</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h3 class="font-semibold">Tarifs dépendance</h3>
-        <ul class="mt-2 text-gray-700">
-          <li>GIR 1-2 : 26,44 € / jour</li>
-          <li>GIR 3-4 : 16,77 € / jour</li>
-          <li>GIR 5-6 : 7,12 € / jour</li>
-        </ul>
-      </div>
-
-      <div class="p-6 bg-white rounded-lg shadow">
+      <!-- Aides financières alignées avec les deux conteneurs -->
+      <div class="p-6 bg-white rounded-lg shadow text-left">
         <h3 class="font-semibold">Aides financières</h3>
-        <p class="mt-2 text-gray-700 text-sm">APA, aide au logement, informations à demander au secrétariat.</p>
+        <p class="mt-2 text-gray-700 text-sm">
+          <strong>APA (Aide Personnalisée à l'Autonomie)</strong> : Selon votre niveau de dépendance et vos ressources, elle peut couvrir tout ou partie du tarif dépendance. Dossier disponible au secrétariat ou au Conseil départemental.
+        </p>
+        <p class="mt-2 text-gray-700 text-sm">
+          <strong>Aide au logement</strong> : Selon vos ressources, demande auprès de la CAF.
+        </p>
       </div>
+
     </div>
 
-    <div class="mt-8">
-      <ol class="list-decimal list-inside text-gray-700">
-        <li>Contactez-nous pour une visite ou un dossier d'admission</li>
-        <li>Constituez votre dossier (contrats, pièces, ordonnances)</li>
-        <li>Validation par le directeur après examen</li>
-      </ol>
-    </div>
+    <!-- Note GIR avec police réduite -->
+    <p class="mt-6 text-gray-500 text-xs">
+      GIR (Groupe Iso-Ressources) : correspond au niveau de perte d’autonomie d’une personne âgée. <a href="https://example.com" class="text-primary underline">Plus d’informations</a>
+    </p>
   </div>
 </section>
