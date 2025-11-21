@@ -3,7 +3,7 @@ const { id, title, subtitle } = Astro.props;
 ---
 <section
   id={id}
-  class="py-12 lg:py-16 bg-gray-50"
+  class="py-12 lg:py-20 bg-gray-50"
   aria-labelledby={id ? `${id}-title` : undefined}
 >
   <div class="container mx-auto px-4">
@@ -11,7 +11,7 @@ const { id, title, subtitle } = Astro.props;
     <!-- TITRE CENTRÉ -->
     <h2
       id={id ? `${id}-title` : undefined}
-      class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-relaxed text-center"
+      class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-primary leading-relaxed text-center"
     >
       {title}
     </h2>
@@ -26,8 +26,8 @@ const { id, title, subtitle } = Astro.props;
     <!-- ESPACE SUPPLÉMENTAIRE -->
     <div class="mt-12"></div>
 
-    <!-- BARRE HORIZONTALE HAUTE 
-    <hr class="my-6 border-t border-gray-300 w-4/5 mx-auto" /> -->
+    <!-- BARRE HORIZONTALE HAUTE -->
+    <hr class="my-6 border-t border-gray-300 w-4/5 mx-auto" /> 
 
     <!-- SLOT FEATURES CENTRÉS -->
     <div class="flex justify-center mt-12 mb-12">
@@ -36,8 +36,8 @@ const { id, title, subtitle } = Astro.props;
       </ul>
     </div>
 
-    <!-- BARRE HORIZONTALE BASSE 
-    <hr class="mt-8 border-t border-gray-300 w-4/5 mx-auto" /> -->
+    <!-- BARRE HORIZONTALE BASSE -->
+    <hr class="mt-8 border-t border-gray-300 w-4/5 mx-auto" /> 
 
   </div>
 </section>

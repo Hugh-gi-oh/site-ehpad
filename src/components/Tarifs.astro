@@ -1,16 +1,12 @@
----
-// Tarifs block
-const { tarifs } = Astro.props;
----
-<section id="tarifs" class="py-12 bg-gray-50">
+<section id="tarifs" class="py-12 lg:py-20 bg-gray-50">
   <div class="container mx-auto px-4">
     <!-- Titre centré -->
     <h2 class="text-3xl font-semibold text-primary text-center">Tarifs et admission</h2>
-    <hr class="mt-8 mb-12 border-gray-300 w-4/5 mx-auto"> <!-- barre supérieure -->
+    <hr class="mt-8 mb-12 border-gray-300 w-4/5 mx-auto">
 
     <!-- Texte et liste alignés avec largeur des blocs tarifs -->
     <div class="max-w-3xl mx-auto">
-      <p class="mt-2 text-3xl font-semibold text-gray-700">Comment nous rejoindre ?</p>
+      <p class="mt-2 text-2xl font-semibold text-gray-700">Comment nous rejoindre ?</p>
 
       <!-- Liste des étapes -->
       <div class="mt-6">
@@ -25,20 +21,18 @@ const { tarifs } = Astro.props;
       </div>
     </div>
 
-    <!-- Barre horizontale sous le texte (hors du conteneur max-w-3xl) -->
     <hr class="mt-8 mb-12 border-gray-300 w-4/5 mx-auto">
 
-    <!-- Wrapper commun pour les tarifs et aides financières -->
     <div class="mt-8 max-w-3xl mx-auto flex flex-col space-y-6">
       
       <!-- Tarifs Hébergements et Dépendance -->
       <div class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
         
         <!-- Tarifs Hébergements -->
-        <div class="p-6 bg-primary/10 rounded-lg shadow text-center flex-1">
-          <h3 class="font-semibold text-primary">Tarifs hébergements</h3>
-          <p class="text-sm font-normal mt-1 mb-8">Tout inclus</p>
-          <p class="text-2xl font-semibold text-primary">83,08€ <span class="text-base font-normal">/ jour</span></p>
+        <div class="p-6 bg-primary rounded-lg shadow-md text-center flex-1 text-white transition duration-300 ease-in-out hover:shadow-xl hover:brightness-105">
+          <h3 class="font-semibold text-white">Tarifs hébergements</h3>
+          <p class="text-sm font-normal mt-1 mb-8 text-white/90">Tout inclus</p>
+          <p class="text-2xl font-semibold text-white">83,08€ <span class="text-base font-normal text-white/90">/ jour</span></p>
         </div>
 
         <!-- Tarifs Dépendance -->
@@ -84,11 +78,9 @@ const { tarifs } = Astro.props;
         </p>
       </div>
 
+      <p class="mt-6 text-gray-500 text-xs">
+        GIR (Groupe Iso-Ressources) : correspond au niveau de perte d’autonomie d’une personne âgée. <a href="https://example.com" class="text-primary underline">Plus d’informations</a>
+      </p>
     </div>
-
-    <!-- Note GIR avec police réduite -->
-    <p class="mt-6 text-gray-500 text-xs">
-      GIR (Groupe Iso-Ressources) : correspond au niveau de perte d’autonomie d’une personne âgée. <a href="https://example.com" class="text-primary underline">Plus d’informations</a>
-    </p>
   </div>
 </section>

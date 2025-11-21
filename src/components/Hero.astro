@@ -1,28 +1,32 @@
 ---
 const { title, subtitle, cta } = Astro.props;
 ---
-<section class="bg-[linear-gradient(to_bottom_right,_#CADACB_10%,_#F8FFF8_90%)] relative">
+<section class="bg-[radial-gradient(circle_at_top_left,_theme(colors.greenSoft)_10%,_theme(colors.greenSoftLight)_50%)] relative">
   <div class="container mx-auto py-16 flex flex-col items-center text-center gap-6 lg:py-24">
     
     <!-- Texte et boutons -->
     <div class="max-w-3xl">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 leading-snug">{title}</h1>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900" style="line-height: 1.5em;">{title}</h1>
       <p class="mt-4 text-lg text-gray-700">{subtitle}</p>
 
       <div class="mt-6 flex flex-col sm:flex-row sm:justify-center gap-4">
+        <!-- Bouton principal -->
         <a
           href="#contact"
-          class="inline-block rounded-md bg-primary px-6 py-3 text-white shadow hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          class="inline-block rounded-md bg-primary px-6 py-3 text-white shadow-md transition duration-300 ease-in-out hover:shadow-xl hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
           {cta}
         </a>
+
+        <!-- Bouton secondaire -->
         <a
           href="#vie"
-          class="inline-block rounded-md border border-primary px-6 py-3 text-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          class="inline-block rounded-md border border-primary px-6 py-3 text-primary transition duration-300 ease-in-out hover:bg-primary/10 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
           Découvrir
         </a>
       </div>
+
     </div>
 
     <!-- Image hero -->
